@@ -300,7 +300,7 @@ func TestSendTxWithP2SH(t *testing.T) {
 	// 37F3LW6dMrveNTixkqLmjm7H5tLQtmRvL2
 	// ri2h7ocncQgmcFWeqSmao8W2KeehsMopBr
 
-	amount := 4e6
+	amount := 8e6
 	// Fund the P2SH address
 	txHash, err := suite.WalletClient.SendToAddress(p2shAddress, btcutil.Amount(amount))
 	assert.Nil(t, err)
@@ -390,7 +390,7 @@ func TestSendTxWithP2SH(t *testing.T) {
 
 	time.Sleep(5 * time.Second)
 	// Verify the transaction
-	suite.GenerateBlocks(2)
+	suite.GenerateBlocks(101)
 	time.Sleep(5 * time.Second)
 
 	davidBalanceAfter, err := davidWallet.CalculateBalance(1)
