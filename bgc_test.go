@@ -73,6 +73,7 @@ func TestBallGameContract(t *testing.T) {
 	t.Logf("Commitment tx: %+v", rawCommitTx.MsgTx())
 
 	// create a new spending psbt
+
 	aliceSpendPubScript := buildSpendingPsbt(&suite, aliceWif)
 	prevTxOut := rawCommitTx.MsgTx().TxOut[0]
 
